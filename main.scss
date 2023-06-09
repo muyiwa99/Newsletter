@@ -1,0 +1,163 @@
+@import "config";
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic&family=Raleway:wght@200;700&family=Roboto:wght@400;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "IBM Plex Sans Arabic", sans-serif;
+  font-family: "Raleway", sans-serif;
+  font-family: "Roboto", sans-serif;
+  background: $charcoal-grey;
+}
+
+// Main section
+
+main {
+  margin: 7.5rem auto;
+  max-width: 850px;
+}
+
+.attribution a {
+  color: $white;
+  position: relative;
+  bottom: 0;
+}
+
+.button {
+  background: $dark-slate-grey;
+  color: $white;
+  padding: 1rem;
+  width: 90%;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: large;
+
+  &:hover {
+    transition: all 0.3s;
+    background: $tomato;
+    box-shadow: $tomato 0px 12px 30px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  }
+}
+
+// Input states for when email is invalid
+form.error input {
+  border: 2px solid $tomato;
+}
+
+form.error input::placeholder {
+  color: tomato;
+}
+
+.main-container {
+  display: flex;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 16px;
+  gap: 2rem;
+  // Left side content
+  &_left {
+    margin: 2rem 0 0 2rem;
+    color: $dark-slate-grey;
+    // Header
+    h1 {
+      font-size: 3.3rem;
+      margin-bottom: 1.3rem;
+    }
+    // 'Join 60,000 text
+    p {
+      margin-bottom: 0.7rem;
+    }
+    // Bullet points
+    ul {
+      margin-block-end: 1.7rem;
+      li {
+        list-style: none;
+        display: flex;
+        gap: 0.6rem;
+
+        img {
+          width: min-content;
+        }
+
+        p {
+          padding: 18px 0 0 10px;
+        }
+      }
+    }
+
+    // Email input
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-block-end: 1rem;
+
+      div {
+        display: flex;
+        gap: 8.7rem;
+        small {
+          font-weight: 900;
+        }
+        .errorM {
+          display: none;
+          color: $tomato;
+        }
+      }
+
+      input {
+        padding: 1rem;
+        width: 90%;
+        border-radius: 4px;
+        border: grey solid 1px;
+      }
+    }
+  }
+  // Right side image
+  &_right {
+    .mobile {
+      display: none;
+    }
+    .desktop {
+      // Making the image responsive
+      width: min(350px, 100%);
+    }
+  }
+  // Sucess dialogue
+  &_success {
+    background: $white;
+    padding: 1rem;
+    border-radius: 16px;
+    margin: auto;
+    width: 50%;
+    padding: 3rem;
+    display: none;
+
+    img {
+      width: 10%;
+      margin-block-end: 2rem;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      margin-block-end: 1rem;
+    }
+
+    p {
+      margin-block-end: 1rem;
+      font-size: 14px;
+      #pass-through {
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+      }
+    }
+
+    .button {
+      width: 100%;
+    }
+  }
+}
